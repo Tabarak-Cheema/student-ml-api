@@ -16,14 +16,16 @@ def client():
 
 
 def test_health_endpoint(client):
-    """Test that /health returns status healthy and correct app name."""
+    """Test that /health returns status healthy, correct app name, and model metadata."""
     response = client.get("/health")
     data = response.get_json()
 
     assert response.status_code == 200
     assert data["status"] == "healthy"
     assert data["application"] == "student-ml-api"
-    assert "version" in data
+    assert "application_version" in data
+    assert data["application_version"] == "1.1.0"
+    assert data["model_version"] == "model-1"
 
 
 def test_predict_success(client):
