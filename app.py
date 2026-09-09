@@ -31,11 +31,12 @@ def predict(value):
 
 @app.route("/health", methods=["GET"])
 def health():
-    """Health check endpoint. Returns application status and version."""
+    """Health check endpoint. Returns application status, version, and model metadata."""
     return jsonify({
         "status": "healthy",
         "application": "student-ml-api",
-        "version": get_version()
+        "application_version": get_version(),
+        "model_version": "model-1"
     }), 200
 
 
