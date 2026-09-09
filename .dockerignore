@@ -1,0 +1,43 @@
+# Version control
+.git
+.gitignore
+
+# GitHub Actions
+.github
+
+# Python cache
+__pycache__
+*.pyc
+*.pyo
+*.pyd
+
+# Virtual environments
+.venv
+venv
+env
+
+# Environment variables
+.env
+.env.local
+
+# IDE files
+.vscode
+.idea
+*.swp
+*.swo
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Test files (not needed in production image)
+tests/
+pytest.ini
+.pytest_cache
+
+# Documentation
+README.md
+docs/
+
+# Docker files
+docker-compose*.yml
